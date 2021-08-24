@@ -7,10 +7,6 @@
     function get_footer( $footer = null ) {
         require_once( DIR_MODULES . '/footer' . ($footer == '' ? '' : '-' . $footer) . '.php');
     }
-    
-    function get_bottom_bar( $bottom_bar = null ) {
-        require_once( DIR_MODULES . '/bottom_bar' . ($bottom_bar == '' ? '' : '-' . $bottom_bar) . '.php');
-    }
 
     function language_attributes(){
         $idioma = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
@@ -84,25 +80,111 @@
 
     function register_style_sheet() {
         enqueue_style('Bootstrap-4', SERVER_URL . 'vendors/bootstrap/dist/css/bootstrap.min.css', '1.0', 'all');
-        enqueue_style('Bootstrap-4', SERVER_URL . 'vendors/font-awesome/css/font-awesome.min.css', '1.0', 'all');
-        enqueue_style('Bootstrap-4', SERVER_URL . 'vendors/nprogress/nprogress.css', '1.0', 'all');
-        enqueue_style('Bootstrap-4', SERVER_URL . 'vendors/animate.css/animate.min.css', '1.0', 'all');
+        enqueue_style('Font-awesome', SERVER_URL . 'vendors/font-awesome/css/font-awesome.min.css', '1.0', 'all');
+        enqueue_style('nprogress', SERVER_URL . 'vendors/nprogress/nprogress.css', '1.0', 'all');
+        enqueue_style('Animate', SERVER_URL . 'vendors/animate.css/animate.min.css', '1.0', 'all');
+        enqueue_style('sweetalert', SERVER_URL . 'vendors/sweetalert2/dist/sweetalert2.css', '1.0', 'all');
         
-        if(is_page('home')){
-            
+        
+        if(is_page('inquiries')){
+            enqueue_style('Jquery-dataTables', 'https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css', '1.0', 'all');
+            enqueue_style('dataTables-bootstrap', SERVER_URL . 'vendors/datatables.net-bs/css/dataTables.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('buttons-bootstrap', SERVER_URL . 'vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('fixedHeader-bootstrap', SERVER_URL . 'vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('responsive-bootstrap', SERVER_URL . 'vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('scroller-bootstrap', SERVER_URL . 'vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('iCheck-green', SERVER_URL . 'vendors/iCheck/skins/flat/green.css', '1.0', 'all');
+        }
+        
+        if(is_page('thirdPartyRegistration')){
+            enqueue_style('select2', SERVER_URL . 'vendors/select2/dist/css/select2.min.css', '1.0', 'all');
+        }
+        
+        if(is_page('bankAccountUpdate')){
+            enqueue_style('Jquery-dataTables', 'https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css', '1.0', 'all');
+            enqueue_style('dataTables-bootstrap', SERVER_URL . 'vendors/datatables.net-bs/css/dataTables.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('buttons-bootstrap', SERVER_URL . 'vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('fixedHeader-bootstrap', SERVER_URL . 'vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('responsive-bootstrap', SERVER_URL . 'vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('scroller-bootstrap', SERVER_URL . 'vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css', '1.0', 'all');
+            enqueue_style('iCheck-green', SERVER_URL . 'vendors/iCheck/skins/flat/green.css', '1.0', 'all');
+            enqueue_style('select2', SERVER_URL . 'vendors/select2/dist/css/select2.min.css', '1.0', 'all');
+        }
+        
+        if(is_page('addressUpdate')){
+            enqueue_style('iCheck-green', SERVER_URL . 'vendors/iCheck/skins/flat/green.css', '1.0', 'all');
+            enqueue_style('select2', SERVER_URL . 'vendors/select2/dist/css/select2.min.css', '1.0', 'all');
+        }
+        
+        if(is_page('issuanceContracts')){
+            enqueue_style('iCheck-green', SERVER_URL . 'vendors/iCheck/skins/flat/green.css', '1.0', 'all');
+            enqueue_style('select2', SERVER_URL . 'vendors/select2/dist/css/select2.min.css', '1.0', 'all');
         }
         
         enqueue_style('custom-min', SERVER_URL . 'build/css/custom.min.css', '1.0', 'all');
-        enqueue_style('style_fixed', SERVER_URL . 'assets/css/style-fixed.css', '1.0', 'all');
     }
 
     function register_script() {
         enqueue_script('jquery', SERVER_URL . 'vendors/jquery/dist/jquery.min.js', '1.0');
         enqueue_script('jquery', SERVER_URL . 'vendors/bootstrap/dist/js/bootstrap.bundle.min.js', '1.0');
+        enqueue_script('jquery', SERVER_URL . 'vendors/sweetalert2/dist/sweetalert2.min.js', '1.0');
+        
+        enqueue_script('icheck', SERVER_URL . 'vendors/iCheck/icheck.min.js', '1.0');
+        enqueue_script('jquery', SERVER_URL . 'build/js/custom.min.js', '1.0');
+        enqueue_script('jquery', SERVER_URL . 'build/js/main.js', '1.0');
+        
             
-        if(is_page('forgotPassword', true)){
-            enqueue_script('send_form_email', SERVER_URL . 'assets/js/send_form_email.js', '1.0');
+        if(is_page('inquiries')){
+            enqueue_script('jquery-dataTables', SERVER_URL . 'vendors/datatables.net/js/jquery.dataTables.min.js', '1.0');
+            enqueue_script('dataTables-bootstrap', SERVER_URL . 'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js', '1.0');
+            enqueue_script('dataTables-buttons', SERVER_URL . 'vendors/datatables.net-buttons/js/dataTables.buttons.min.js', '1.0');
+            enqueue_script('buttons-bootstrap', SERVER_URL . 'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js', '1.0');
+            enqueue_script('buttons-flash', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.flash.min.js', '1.0');
+            enqueue_script('buttons-html5', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.html5.min.js', '1.0');
+            enqueue_script('buttons-print', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.print.min.js', '1.0');
+            enqueue_script('dataTables-fixedHeader', SERVER_URL . 'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js', '1.0');
+            enqueue_script('dataTables-keyTable', SERVER_URL . 'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js', '1.0');
+            enqueue_script('dataTables-responsive', SERVER_URL . 'vendors/datatables.net-responsive/js/dataTables.responsive.min.js', '1.0');
+            enqueue_script('responsive-bootstrap', SERVER_URL . 'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js', '1.0');
+            enqueue_script('dataTables-scroller', SERVER_URL . 'vendors/datatables.net-scroller/js/dataTables.scroller.min.js', '1.0');
+            
+            enqueue_script('inquiries-functions', SERVER_URL . 'vendors/inquiries/inquiries-functions.js', '1.0');
         }
+        
+        if(is_page('thirdPartyRegistration')){
+            enqueue_script('select2', SERVER_URL . 'vendors/select2/dist/js/select2.min.js', '1.0');
+            enqueue_script('dataTables-scroller', SERVER_URL . 'vendors/thirdPartyRegistration/thirdPartyRegistration.js', '1.0');
+
+        }
+            
+        if(is_page('bankAccountUpdate')){
+            enqueue_script('jquery-dataTables', SERVER_URL . 'vendors/datatables.net/js/jquery.dataTables.min.js', '1.0');
+            enqueue_script('dataTables-bootstrap', SERVER_URL . 'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js', '1.0');
+            enqueue_script('dataTables-buttons', SERVER_URL . 'vendors/datatables.net-buttons/js/dataTables.buttons.min.js', '1.0');
+            enqueue_script('buttons-bootstrap', SERVER_URL . 'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js', '1.0');
+            enqueue_script('buttons-flash', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.flash.min.js', '1.0');
+            enqueue_script('buttons-html5', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.html5.min.js', '1.0');
+            enqueue_script('buttons-print', SERVER_URL . 'vendors/datatables.net-buttons/js/buttons.print.min.js', '1.0');
+            enqueue_script('dataTables-fixedHeader', SERVER_URL . 'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js', '1.0');
+            enqueue_script('dataTables-keyTable', SERVER_URL . 'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js', '1.0');
+            enqueue_script('dataTables-responsive', SERVER_URL . 'vendors/datatables.net-responsive/js/dataTables.responsive.min.js', '1.0');
+            enqueue_script('responsive-bootstrap', SERVER_URL . 'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js', '1.0');
+            enqueue_script('dataTables-scroller', SERVER_URL . 'vendors/datatables.net-scroller/js/dataTables.scroller.min.js', '1.0');
+            enqueue_script('select2', SERVER_URL . 'vendors/select2/dist/js/select2.min.js', '1.0');
+
+            enqueue_script('inquiries-functions', SERVER_URL . 'vendors/banckAccount/banckAccount-functions.js', '1.0');
+        }
+
+        if(is_page('addressUpdate')){
+            enqueue_script('select2', SERVER_URL . 'vendors/select2/dist/js/select2.min.js', '1.0');
+            enqueue_script('inquiries-functions', SERVER_URL . 'vendors/addressUpdate/addressUpdate-functions.js', '1.0');
+        }
+
+        if(is_page('issuanceContracts')){
+            enqueue_script('select2', SERVER_URL . 'vendors/select2/dist/js/select2.min.js', '1.0');
+            enqueue_script('inquiries-functions', SERVER_URL . 'vendors/issuanceContracts/issuanceContracts-functions.js', '1.0');
+        }
+
         
 }
 

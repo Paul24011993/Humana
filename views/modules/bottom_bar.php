@@ -1,11 +1,6 @@
-<div class="footer">
+<footer>
 	<div class="pull-right">
-		<ul class="list-inline">
-			<li><a title="" href="index.html">Dashboard</a></li>
-			<li><a title="" href="mailbox.html"> Inbox </a></li>
-			<li><a title="" href="blog.html">Blog</a></li>
-			<li><a title="" href="contacts.html">Contacts</a></li>
-		</ul>
+		Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
 	</div>
-	<div> <strong>Copyright</strong> Artias Soft Company &copy; <?php echo date('Y'); ?> </div>
-</div>
+	<div class="clearfix"></div>
+</footer>

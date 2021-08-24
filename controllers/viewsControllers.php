@@ -10,7 +10,7 @@
 			if(isset($_GET['views'])){
 				$route = explode('/', $_GET['views']);
 				$reply = self::get_views_models($route[0]);
-				
+				//die(var_export($_GET['views']));
 			}else{
 
 				$reply = 'login';

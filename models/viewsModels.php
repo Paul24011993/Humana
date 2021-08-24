@@ -5,6 +5,11 @@
 			
 			$accepted_routes = array(
 				"home",
+				"inquiries",
+				"thirdPartyRegistration",
+				"bankAccountUpdate",
+				"issuanceContracts",
+				"addressUpdate",
 			);
 			if(in_array($views, $accepted_routes)){
 				// Si el archivo existe

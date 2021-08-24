@@ -11,7 +11,8 @@
                     <input type="password" class="form-control" placeholder="Password" required="" value="admin"/>
                 </div>
                 <div>
-                    <a class="btn btn-secondary submit" href="<?php echo SERVER_URL ?>home/">Acceder</a>
+                    <button type="button" class="btn btn-success submit">Acceder</button>
+                    
                 </div>
                 <div class="clearfix"></div>
                 <div class="separator">
