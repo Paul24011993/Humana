@@ -5,10 +5,10 @@
             <form>
                 <h1>Ingreso al Sistema</h1>
                 <div>
-                    <input type="text" class="form-control" placeholder="Username" required="" value="admin"/>
+                    <input type="text" class="form-control" placeholder="Username" required="" value=""/>
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Password" required="" value="admin"/>
+                    <input type="password" class="form-control" placeholder="Password" required="" value=""/>
                 </div>
                 <div>
                     <button type="button" class="btn btn-success submit">Acceder</button>
