@@ -2,8 +2,10 @@ $('document').ready(function (e) {
 
     $('body').on("click","button.submit",function(){
         setCookie("Token_user", token(), 1);
-        if(getCookie('Token_user') !== ''){
+        if(getCookie('Token_user') !== '' && $('input[name="user"]').val() == 'admin' && $('input[name="pass"]').val() == 'admin'){
             $(location).attr('href', SERVER_URL + "home/");
+        }else{
+            alert('Credenciales incorrectas');
         }
     });
     
@@ -18,6 +20,10 @@ $('document').ready(function (e) {
     $(".only-number").numbersOnly();
     $(".alpha_numeric").alphaNumericOnly();*/
 
+    $('input[name="intervaltype"]').click(function () {
+        $(this).tab('show');
+        $(this).removeClass('active');
+    });
 
 });
 

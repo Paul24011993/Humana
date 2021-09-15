@@ -40,7 +40,7 @@
 											<li><a href="<?php echo SERVER_URL ?>bankAccountUpdate/">Actualización de cuentas bancarias</a></li>
 											<li><a href="index.html">Actualización de tipo de identificación</a></li>
 											<li><a href="index.html">Actualización de fecha de nacimiento</a></li>
-											<li><a href="index2.html">Actualización de cuentas restit.</a></li>
+											<li><a href="<?php echo SERVER_URL ?>restitutionAccounts/"">Actualización de cuentas restitucion.</a></li>
 										</ul>
 									</li>
 								</ul>

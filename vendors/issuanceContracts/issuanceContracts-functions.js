@@ -63,6 +63,7 @@ $('document').ready(function (e) {
 		
 
 
+
 	/*
 		$("#select_city option:selected").each(function () {
 			per_id = $(this).val();
@@ -259,6 +260,124 @@ $('document').ready(function (e) {
 			});
 			return false;
 		});
+	});
+
+
+	var data = [
+		{
+			id: 0,
+			text: 'Selecione',
+			"selected": true
+		},
+		{
+			id: 4,
+			text: '946 - PLAN FULL - METROHUMANA 50.000'
+		}
+	];
+
+	$("#nombre_plan").select2({
+		data: data
+	})
+
+	var tbHtml2 = '';
+	var tbHtml3 = '';
+	$("#nombre_plan").change(function () {
+
+		tbHtml2 += `
+		<tr>
+			<th>946</th>
+			<th>MH 50.000 - COD</th>
+			<th>PLAN FULL - METROHUMANA 50.000</th>
+			<th>10</th>
+			<th>METROHUKMANA</th>
+			<th>1</th>
+			<th>GRUPO 1</th>
+		</tr>`;
+
+		$('#table_detail_plan tbody').prepend(tbHtml2);
+
+		$('select[name="negocio_select"]').val('2');
+		$('input[name="negocio_select"]').val('E');
+		$('input[name="edad_min_titular"]').val('18');
+		$('input[name="manual_tar_1"]').val('1383');
+		$('input[name="manual_tar_2"]').val('TARIFARIO METROHUMANA');
+		$('input[name="edad_maximo_titular"]').val('110');
+		$('select[name="tipo_apilcacion"]').val('2');
+		$('input[name="valor_base"]').val('1.00');
+		$('input[name="periodo_presente_recalmo"]').val('60');
+		
+		$('input[name="tipo_cobertura_1"]').val('2');
+		$('input[name="tipo_cobertura_2"]').val('ANUAL');
+		$('input[name="periodo_cobertura_1"]').val('1');
+		$('input[name="periodo_cobertura_2"]').val('VIOGENCIA CONTRATO');
+		$('input[name="valor_cobertura"]').val('50.000.00');
+		$('select[name="tope_cobertura"]').val('2');
+		$('input[name="Codsecuases"]').val('5');
+		$('input[name="NombreAcess"]').val('Plan Full - Metrohumana 50.000');
+		$('input[name="Codscvs"]').val('53059');
+		$('input[name="CodAcess"]').val('005-Cl3-2020');
+		$('input[name="Benefscvs"]').val('53069');
+		$('input[name="Benefacess"]').val('005-10-012');
+
+
+		tbHtml3 += `
+		<tr>
+			<th>0</th>
+			<th>110</th>
+			<th>100.00%</th>
+			<th>50.000</th>
+		</tr>`;
+
+		$('#table_edad_cobertura tbody').prepend(tbHtml3);
+	
+	});
+
+
+	var data2 = [
+		{
+			id: 0,
+			text: 'Selecione',
+			"selected": true
+		},
+		{
+			id: 4,
+			text: '946 - PLAN FULL - METROHUMANA 50.000'
+		}
+	];
+
+	$("#select_identificacion").select2({
+		data: data2
+	})
+
+	var tbHtml4 = '';
+	$("#select_identificacion").change(function () {
+
+		tbHtml4 += `
+		<tr>
+			<th>1311370413</th>
+			<th>VERA CAMACHO WILSON JAVIER</th>
+		</tr>`;
+
+		$('#table_identificacion tbody').prepend(tbHtml4);
+
+		$('select[name="select_plan"]').val('2');
+		$('input[name="input_tarifa"]').val('GRUPO ETAREO');
+		$('input[name="input_estado"]').val('INGRESADO');
+		$('input[name="fech_nacimiento"]').val('13/05/1978');
+		$('input[name="edad_ingreso"]').val('43');
+		$('input[name="input_sexo"]').val('MASCULINO');
+		$('input[name="prima_neta"]').val('92.04');
+		
+		tbHtml3 += `
+		<tr>
+			<th>0</th>
+			<th>110</th>
+			<th>100.00%</th>
+			<th>50.000</th>
+		</tr>`;
+
+		$('#table_edad_cobertura tbody').prepend(tbHtml3);
+	
 	});
 
 

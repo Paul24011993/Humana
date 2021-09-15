@@ -71,7 +71,7 @@
 											</a>
 										</li>
                                         <li class="nav-item">
-                                            <a class="nav-link" style="cursor: no-drop;" id="contactos-tab" data-toggle="tab" href="#contactos" role="tab" aria-controls="contactos" aria-selected="false">
+                                            <a class="nav-link" id="notificaciones-tab" data-toggle="tab" href="#notificaciones" role="tab" aria-controls="notificaciones" aria-selected="false">
                                                 Notificación
 											</a>
 										</li>
@@ -263,6 +263,41 @@
 												</div>
 											</div>
 										</div>
+
+
+
+                                        <div class="tab-pane fade pt-3 " id="notificaciones" role="tabpanel" aria-labelledby="notificaciones-tab">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Proceso</th>
+                                                        <th>Mail</th>
+                                                        <th>Copia</th>
+                                                        <th>Celular</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">NOTIFICACIONES RENOVACIONES AUTOMATICAS</th>
+                                                        <td>stevn_armijossa@hotmail.com</td>
+                                                        <td></td>
+                                                        <td>0992748585</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"> </th>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"> </th>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                        <td> </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+										</div>
 										
 									</div>
 								</div>
@@ -272,8 +307,8 @@
                                     <div class="text-center">
                                         <div class="btn-group-vertical">
 											<button class="btn btn-default" type="button">Nuevos</button>
-											<button class="btn btn-default my-1" type="button">Planes</button>
-											<button class="btn btn-default" type="button">Afiliados</button>
+											<button class="btn btn-default my-1" data-toggle="modal" data-target="#exampleModal" type="button">Planes</button>
+											<button class="btn btn-default" data-toggle="modal" data-target="#modalAfiliados" type="button" type="button">Afiliados</button>
 											<button class="btn btn-default my-1" type="button">Cuotas</button>
 											<button class="btn btn-default" type="button">Aprobación</button>
 										</div>

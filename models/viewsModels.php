@@ -10,6 +10,7 @@
 				"bankAccountUpdate",
 				"issuanceContracts",
 				"addressUpdate",
+				"restitutionAccounts",
 			);
 			if(in_array($views, $accepted_routes)){
 				// Si el archivo existe
