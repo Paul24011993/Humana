@@ -51,6 +51,8 @@ function capitalizarPalabras(val) {
         .join(' ');
 }
 
+
+
 var idioma_espanol = {
     "sProcessing": "Procesando...",
     "sLengthMenu": "Mostrar _MENU_ registros",
