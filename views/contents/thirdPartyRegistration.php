@@ -16,16 +16,24 @@
                             <div class="col-12 col-md-6 col-sm-6 ">
                                 <label class="control-label col-md-4 col-sm-4 ">Tipo Identif.</label>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <select class="form-control" name="tip_dni">
-                                        <option value="" selected >SELECCIONE</option>
-                                        <option value="2">CÉDULA</option>
-									</select>
+									<div class="input-group">
+										<input type="text" class="form-control" name="tip_dni" placeholder="" style="width:10%;">
+										<span class="input-group-btn" style="width:87%; margin-left:3%;">
+											<input type="text" class="form-control" name="tip_dni_name" placeholder="">
+										</span>
+									</div>
 								</div>
 							</div>
                             <div class="col-12 col-md-6 col-sm-6 ">
                                 <label class="control-label col-md-4 col-sm-4 ">Identificación</label>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <input type="text" class="form-control" name="dni" placeholder="">
+								<div class="input-group">
+									<input type="text" class="form-control" name="dni" placeholder="">
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-primary" id="button_serach_person"><i class="fa fa-search"></i> Buscar</button>
+									</span>
+								</div>
+                                    
 								</div>
 							</div>
 						</div>
@@ -33,11 +41,12 @@
                             <div class="col-12 col-md-6 col-sm-6 ">
                                 <label class="control-label col-md-4 col-sm-4 ">Tipo persona</label>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <select class="form-control" name="tip_per">
-                                        <option value="" selected>SELECCIONE</option>
-                                        <option value="1">NATURAL</option>
-                                        <option value="2">JURÍDICO</option>
-									</select>
+									<div class="input-group">
+										<input type="text" class="form-control" name="tip_per" placeholder="" style="width:10%;">
+										<span class="input-group-btn" style="width:87%; margin-left:3%;">
+											<input type="text" class="form-control" name="tip_per_name" placeholder="">
+										</span>
+									</div>
 								</div>
 							</div>
                             <div class="col-12 col-md-6 col-sm-6 ">
@@ -51,11 +60,12 @@
                             <div class="col-12 col-md-6 col-sm-6 ">
                                 <label class="control-label col-md-4 col-sm-4 ">Estado</label>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <select class="form-control" name="status">
-                                        <option value="" selected>SELECCIONE</option>
-                                        <option value="1">ACTIVO</option>
-                                        <option value="2">INACTIVO</option>
-									</select>
+									<div class="input-group">
+										<input type="text" class="form-control" name="status" placeholder="" style="width:10%;">
+										<span class="input-group-btn" style="width:87%; margin-left:3%;">
+											<input type="text" class="form-control" name="status_name" placeholder="">
+										</span>
+									</div>
 								</div>
 							</div>
                             <div class="col-12 col-md-6 col-sm-6 ">
@@ -165,11 +175,12 @@
                                         <div class="col-12 col-md-6 col-sm-6 ">
                                             <label class="control-label col-md-4 col-sm-4 ">Género</label>
                                             <div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="genero">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="M">MASCULINO</option>
-                                                    <option value="F">FEMENINO</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="genero" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="genero_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -185,19 +196,23 @@
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-4 col-sm-4 ">Tipo vivienda</label>
 											<div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="tip_viv">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="0">NO APLICA</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="tip_viv" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="tip_viv_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-4 col-sm-4 ">Estudios</label>
 											<div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="estudios">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="1">A/N</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="estudios" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="estudios_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -206,19 +221,23 @@
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-4 col-sm-4 ">Estado civil</label>
 											<div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="estado_civil">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="23">CASADO/A</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="estado_civil" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="estado_civil_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-4 col-sm-4 ">Cargo</label>
 											<div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="cargo">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="1">A/N</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="cargo" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="cargo_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -227,10 +246,12 @@
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-4 col-sm-4 ">Profesión</label>
 											<div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="profesion">
-                                                    <option value="" selected>SELECCIONE</option>
-                                                    <option value="201">ACTIVO</option>
-												</select>
+												<div class="input-group">
+													<input type="text" class="form-control" name="profesion" placeholder="" style="width:10%;">
+													<span class="input-group-btn" style="width:87%; margin-left:3%;">
+														<input type="text" class="form-control" name="profesion_name" placeholder="">
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
