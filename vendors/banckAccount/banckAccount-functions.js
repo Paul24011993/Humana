@@ -18,7 +18,15 @@ $('document').ready(function (e) {
 
 						$('input[name=full_name]').val(registro.PER_APELLIDO_PATERNO + ' ' + registro.PER_APELLIDO_MATERNO + ' ' + registro.PER_PRIMER_NOMBRE + ' ' + registro.PER_SEGUNDO_NOMBRE);
 						$('input[name=email]').val(registro.PER_EMAIL);
-						$('select[name=tip_dni]').val(registro.PER_TIPO_DNI);
+						//$('input[name=tip_dni]').val(registro.PER_TIPO_DNI);
+
+						$("input[name=tip_dni]").val(registro.PER_TIPO_DNI)
+						if($("input[name=tip_dni]").val() == 1){
+							$("input[name=tip_dni_name]").val('CEDULA')
+						}else if($("input[name=tip_dni]").val() == 2){
+							$("input[name=tip_dni_name]").val('PASAPORTE')
+						}
+
 						$('input[name=dni]').val(registro.PER_DNI);
 						$('input[name=fecha_nac]').val(registro.PER_FECHA_NACIMIENTO);
 						$('input[name=genero]').val(registro.PER_GENERO);
@@ -76,6 +84,18 @@ $('document').ready(function (e) {
 		});
 	});
 
+
+	$("input[name=tip_cuenta_up]").blur(function(){
+        if($(this).val() == 1){
+            $(this).siblings().find('input').val('AHORROS');
+        }else if($(this).val() == 2){
+            $(this).siblings().find('input').val('TARJETA');
+        }else if($(this).val() == 3){
+            $(this).siblings().find('input').val('CORRIENTE');
+        }else if($(this).val() == 4){
+            $(this).siblings().find('input').val('VIRTUAL DE PAGO');
+        }
+	});
 
 	        //$('#price, #tax').on('keyup change paste', function() {
 	$('.FormularioAjax').submit(function(e){

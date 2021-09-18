@@ -1,9 +1,5 @@
 $(function(e) {
-	$('#datatable_inquiries').on( 'draw.dt', function () {
-		if($('#test_show').length ){
-			swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
-		}
-	} );
+
 	
 	var role_user = $("input[type='radio']").val();
 	$("input[type='radio']:first").iCheck('check');
@@ -23,6 +19,16 @@ $(function(e) {
 	// Register date formats to allow DataTables sorting of the dates https://momentjs.com/
 	//$.fn.dataTable.moment( 'LLLL', 'es');		 // Monday, August 2, 2021 5:57 PM
 
+	$('#datatable_inquiries').on( 'draw.dt', function () {
+	 
+		
+		if($('#test_show').length ){
+			swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
+		}
+	} );
+
+ 
+	 
 });
 
  
@@ -72,7 +78,7 @@ $(function(e) {
 var idioma_espanol2 = {
     "sProcessing": "Procesando...",
     "sLengthMenu": "Mostrar _MENU_ registros",
-    "sZeroRecords": "No se encontraron resultados",
+    "sZeroRecords": "<code id='test_show'>No existe personas que cumplan con los filtros de busqueda ingresados, revise.</code>",
     "sEmptyTable": "<code id='test_show'>No existe personas que cumplan con los filtros de busqueda ingresados, revise.</code>",
 	/*"searchPanes": {
 		"emptyPanes": 'There are no panes to display. :/'

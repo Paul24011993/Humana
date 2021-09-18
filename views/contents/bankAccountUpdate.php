@@ -40,10 +40,12 @@
                             <div class="col-12 col-md-6 col-sm-6 ">
                                 <label class="control-label col-md-4 col-sm-4 ">Tipo Identif.</label>
                                 <div class="col-md-8 col-sm-8 ">
-                                    <select class="form-control" name="tip_dni">
-                                        <option value="" selected >SELECCIONE</option>
-                                        <option value="2">CÉDULA</option>
-									</select>
+                                    <div class="input-group">
+										<input type="text" class="form-control" name="tip_dni" placeholder="" style="width:10%;">
+										<span class="input-group-btn" style="width:87%; margin-left:3%;">
+											<input type="text" class="form-control" name="tip_dni_name" placeholder="">
+										</span>
+									</div> 
 								</div>
 							</div>
                             <div class="col-12 col-md-6 col-sm-6 ">
@@ -143,14 +145,13 @@
                                         <div class="col-12 col-md-12 col-sm-12 ">
                                             <label class="control-label col-md-4 col-sm-4 ">Tipo Cuenta</label>
                                             <div class="col-md-8 col-sm-8 ">
-                                                <select class="form-control" name="tip_cuenta" >
-                                                    <option value="" selected >SELECCIONE</option>
-                                                      <option value="" selected >SELECCIONE</option>
-                                                        <option value="1">AHORROS</option>
-                                                        <option value="2">TARJETA</option>
-                                                        <option value="3">CORRIENTE</option>
-                                                        <option value="4">VIRTUAL DE PAGO</option>
-                                                    </select>
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="tip_cuenta_up" placeholder="" style="width:10%;">
+                                                <span class="input-group-btn" style="width:87%; margin-left:3%;">
+                                                    <input type="text" class="form-control" name="tip_cuenta_up_name" placeholder="">
+                                                </span>
+                                            </div>
                                                 </div>
                                             </div>
                                         </div>

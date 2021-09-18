@@ -110,6 +110,7 @@ function eraseCookie(name) {
 // cargar datos en un select2 con ajax
 function load_select_2(identifier, patch){
     $(identifier).select2({
+        //minimumInputLength: 2,
         placeholder: 'SELECCIONE',
         ajax: {
             url: SERVER_API + patch,
@@ -122,13 +123,13 @@ function load_select_2(identifier, patch){
                 };
             },
             processResults: function (response) {
-                //console.log(response);
                 return {
                     results: response
                 };
             },
             cache: true
-        }
+        },
+        debug:false
     });
 }
 
