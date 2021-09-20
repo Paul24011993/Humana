@@ -2,10 +2,11 @@ $('document').ready(function (e) {
 
 	load_select_2("#select_contratante", 'Persons/get_person/');
 
-	
-	//$('#datatable_addressUpdate').DataTable();
-
-	$("#select_city").change(function () {
+	$("input[name=ciudad]").blur(function(){
+        if($(this).val() == 1){
+            $(this).siblings().find('input').val('QUITO');
+        }
+ 
 		$('select[name="negocio"]').val('2');
 		$('input[name="min_tit"]').val('1');
 		$('input[name="edad_ingreso"]').val('110');

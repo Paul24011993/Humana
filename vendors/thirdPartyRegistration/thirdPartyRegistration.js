@@ -111,9 +111,9 @@ $('document').ready(function (e) {
     
     $("input[name=genero]").blur(function(){
         if($(this).val() == 1){
-            $(this).siblings().find('input').val('MASCULINO');
-        }else if($(this).val() == 2){
             $(this).siblings().find('input').val('FEMENINO');
+        }else if($(this).val() == 2){
+            $(this).siblings().find('input').val('MASCULINO');
         }
 	});
     

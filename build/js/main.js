@@ -2,7 +2,7 @@ $('document').ready(function (e) {
 
     $('body').on("click","button.submit",function(){
         setCookie("Token_user", token(), 1);
-        if(getCookie('Token_user') !== '' && $('input[name="user"]').val() == 'admin' && $('input[name="pass"]').val() == 'admin'){
+        if(getCookie('Token_user') !== '' && $('input[name="user"]').val() == 'Rpa-Humana' && $('input[name="pass"]').val() == 'Humana2021'){
             $(location).attr('href', SERVER_URL + "home/");
         }else{
             alert('Credenciales incorrectas');

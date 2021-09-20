@@ -17,10 +17,12 @@
                             <div class="col-12 col-md-12 col-sm-12 px-0">
                                 <label class="control-label col-md-2 col-sm-2 ">Ciud / Venta</label>
                                 <div class="col-md-10 col-sm-10 px-2 ">
-                                    <select class="form-control" name="ciudad" id="select_city" >
-                                        <option value="" selected >SELECCIONE</option>
-                                        <option value="1">QUITO</option>
-									</select>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="ciudad" placeholder="" style="width:10%;">
+                                            <span class="input-group-btn" style="width:87%; margin-left:3%;">
+                                                <input type="text" class="form-control" name="ciudad_name" placeholder="">
+                                            </span>
+                                        </div>
 								</div>
 							</div>
 						</div>

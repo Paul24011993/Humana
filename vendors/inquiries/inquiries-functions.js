@@ -4,38 +4,90 @@ $(function(e) {
 	var role_user = $("input[type='radio']").val();
 	$("input[type='radio']:first").iCheck('check');
 	
-    get_list_users(role_user);
+
+	get_list_users(role_user);
 	
-    $('.role_user').on('ifClicked', function (event) {
+	$('.role_user').on('ifClicked', function (event) {
+		$("#datatable_inquiries tbody").empty();
 		role_user = $(this).val();
-        get_list_users($(this).val());
-		 
-    });
-    
+		get_list_users($(this).val());
+	});
+	
+	$('#button_serach_person_table').on('click', function (event) {
+		$("#datatable_inquiries tbody").empty();
+		var input_search = $(this).parent().siblings('input[type="text"]').val();
+		console.log(input_search);
+
+		$.post(SERVER_API + "Persons/search_input/", { input_search: input_search }, function (data) {
+			var get_data_to_table2 = $.parseJSON(data).data;
+			if(get_data_to_table2.length){
+				
+				$.each(get_data_to_table2, function (key, registro) {
+					//console.log(registro);
+
+					tbHtml = `<tr>
+								<td>${registro.PER_CODIGO}</td>
+								<td>${registro.TIP_ID}</td>
+								<td>${registro.PER_DNI}</td>
+								<td>${registro.PER_APELLIDO_PATERNO +' '+registro.PER_APELLIDO_MATERNO +' ' + registro.PER_PRIMER_NOMBRE +' '+registro.PER_SEGUNDO_NOMBRE }</td>
+								<td>${registro.PER_FECHA_NACIMIENTO}</td>
+								<td>${registro.PER_GENERO}</td>
+								<td>${registro.PER_GENERO}</td>
+								<td>${(registro.PER_ESTADO == 1 )? 'Usuario activo' : 'Usuario inactivo' }</td>
+							</tr>`;
+					$("#datatable_inquiries tbody").append(tbHtml);
+				});
+			}else{
+				swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
+			}
+
+
+		});
+	});
+	
+	
 	$('.action_add_person').on('click', function (event) {
 		$(location).attr('href', SERVER_URL + "thirdPartyRegistration/");
 	});
-
-	// Register date formats to allow DataTables sorting of the dates https://momentjs.com/
-	//$.fn.dataTable.moment( 'LLLL', 'es');		 // Monday, August 2, 2021 5:57 PM
-
+/*
 	$('#datatable_inquiries').on( 'draw.dt', function () {
 	 
 		
 		if($('#test_show').length ){
 			swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
 		}
-	} );
+	} );*/
 
- 
-	 
 });
-
- 
 //******* profiles ******/
  function get_list_users (role_user) {
-
 	
+	//var tbHtmlInquiries = '';
+	$.post(SERVER_API + "Persons/", { role_user: role_user }, function (data) {
+		var get_data_to_table = $.parseJSON(data).data;
+		if(get_data_to_table.length){
+			
+			$.each(get_data_to_table, function (key, registro) {
+
+				tbHtml = `<tr>
+							<td>${registro.PER_CODIGO}</td>
+							<td>${registro.TIP_ID}</td>
+							<td>${registro.PER_DNI}</td>
+							<td>${registro.PER_APELLIDO_PATERNO +' '+registro.PER_APELLIDO_MATERNO +' ' + registro.PER_PRIMER_NOMBRE +' '+registro.PER_SEGUNDO_NOMBRE }</td>
+							<td>${registro.PER_FECHA_NACIMIENTO}</td>
+							<td>${registro.PER_GENERO}</td>
+							<td>${registro.PER_GENERO}</td>
+							<td>${(registro.PER_ESTADO == 1 )? 'Usuario activo' : 'Usuario inactivo' }</td>
+						</tr>`;
+				$("#datatable_inquiries tbody").append(tbHtml);
+			});
+		}else{
+			swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
+		}
+	});
+
+
+	/*
 	$('#datatable_inquiries').DataTable({
 		"destroy" : true,
 		"columnDefs": [
@@ -65,45 +117,12 @@ $(function(e) {
 				}
 			},
 		],
+	
 		"language": idioma_espanol2,
-	});
-
-
-
-
-
-}
-
-
-var idioma_espanol2 = {
-    "sProcessing": "Procesando...",
-    "sLengthMenu": "Mostrar _MENU_ registros",
-    "sZeroRecords": "<code id='test_show'>No existe personas que cumplan con los filtros de busqueda ingresados, revise.</code>",
-    "sEmptyTable": "<code id='test_show'>No existe personas que cumplan con los filtros de busqueda ingresados, revise.</code>",
-	/*"searchPanes": {
-		"emptyPanes": 'There are no panes to display. :/'
-	},*/
-    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-    "sInfoPostFix": "",
-    "sSearch": "Buscar:",
-    "sUrl": "",
-    "sInfoThousands": ",",
-    "sLoadingRecords": "Cargando...",
-    "oPaginate": {
-        "sFirst": "Primero",
-        "sLast": "Último",
-        "sNext": "Siguiente",
-        "sPrevious": "Anterior"
-    },
-    "oAria": {
-        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-    },
-    "buttons": {
-        "copy": "Copiar",
-        "colvis": "Visibilidad"
-    }
-};
-//******* end profiles ******/
+		
+		
+		
+		
+		
+		*/	
+	}
