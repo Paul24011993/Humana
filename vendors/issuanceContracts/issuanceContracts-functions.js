@@ -58,6 +58,9 @@ $('document').ready(function (e) {
 		$('input[name="registro"]').val('272117');
 		$('input[name="user_crea"]').val('RPA_SOFT');
 		$('input[name="fecha_crea"]').val('2021-08-01 21:08:52');
+
+		$('input[name="contrato"]').val('272117');
+		$('input[name="version"]').val('1');
 		
 	});
 		

@@ -181,9 +181,9 @@
 										<label class="control-label col-md-4 col-sm-4 ">Cédula</label>
 										<div class="col-md-8 col-sm-8 ">
 											<div class="input-group">
-												<input type="text" class="form-control" placeholder="" readonly>
+												<input type="text" class="form-control" placeholder="" name="dni_por_tercero" >
 												<span class="input-group-btn">
-													<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+													<button type="button" class="btn btn-default" id="serch_data_por_tercero"><i class="fa fa-search"></i></button>
 												</span>
 											</div>
 										</div>
@@ -201,7 +201,7 @@
 									<div class="col-12 col-md-6 col-sm-6 px-0">
 										<label class="control-label col-md-4 col-sm-4 ">Nombres</label>
 										<div class="col-md-8 col-sm-8 ">
-											<input type="text" class="form-control" placeholder="" readonly>
+											<input type="text" class="form-control" placeholder="" readonly name="name_user_data">
 										</div>
 									</div>
 								</div>
@@ -278,3 +278,25 @@
 			</div>
 		</div>
 	</div>
+	<script>
+
+$('#serch_data_por_tercero').on('click', function (event) {
+	var input_dni = $(this).parent().siblings('input[name="dni_por_tercero"]').val();
+
+	
+	$.post(SERVER_API + "Persons/get_all_persons_dni/", { input_dni: input_dni }, function (data) {
+		var get_data_person_dni = $.parseJSON(data).data;
+		if(get_data_person_dni.length){
+			
+			$.each(get_data_person_dni, function (key, registro) {
+				
+				$('input[name="name_user_data"]').val(registro.PER_PRIMER_NOMBRE + ' ' + registro.PER_SEGUNDO_NOMBRE + ' ' + registro.PER_APELLIDO_PATERNO + ' ' + registro.PER_APELLIDO_MATERNO);			
+			});
+		}else{
+			swal('','No existe personas que cumplan con los filtros de busqueda ingresados, revise.','warning');
+		}
+
+
+	});
+});
+	</script>
