@@ -144,14 +144,14 @@
                                     <div class="form-group row">
                                         <div class="col-12 col-md-12 col-sm-12 ">
                                             <label class="control-label col-md-4 col-sm-4 ">Tipo Cuenta</label>
-                                            <div class="col-md-8 col-sm-8 ">
+                                                <div class="col-md-8 col-sm-8 ">
 
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" name="tip_cuenta_up" placeholder="" style="width:10%;">
-                                                <span class="input-group-btn" style="width:87%; margin-left:3%;">
-                                                    <input type="text" class="form-control" name="tip_cuenta_up_name" placeholder="">
-                                                </span>
-                                            </div>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="tip_cuenta_up" placeholder="" style="width:10%;">
+                                                        <span class="input-group-btn" style="width:87%; margin-left:3%;">
+                                                            <input type="text" class="form-control" name="tip_cuenta_up_name" placeholder="">
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,7 +169,12 @@
                                         <div class="col-12 col-md-12 col-sm-12 ">
                                             <label class="control-label col-md-4 col-sm-4 ">Tarjeta</label>
                                             <div class="col-md-8 col-sm-8 ">
-                                                <input type="text" class="form-control" placeholder="" name="tarjeta">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="tarjeta_up" placeholder="" style="width:10%;">
+                                                    <span class="input-group-btn" style="width:87%; margin-left:3%;">
+                                                        <input type="text" class="form-control" name="tarjeta_up" placeholder="">
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -187,7 +192,12 @@
                                         <div class="col-12 col-md-12 col-sm-12 ">
                                             <label class="control-label col-md-2 col-sm-2 ">Banco</label>
                                             <div class="col-md-10 col-sm-10 ">
-                                                <input type="text" class="form-control" placeholder="" name="nombre_banco">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="nombre_banco_up" placeholder="" style="width:10%;">
+                                                    <span class="input-group-btn" style="width:87%; margin-left:3%;">
+                                                        <input type="text" class="form-control" name="nombre_banco_up" placeholder="">
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

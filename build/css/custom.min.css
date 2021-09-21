@@ -1756,6 +1756,11 @@ h2 {
 .accordion .panel:hover {
   background: #f2f5f7;
 }
+
+.select2 {
+  width: 100% !important;
+}
+
 .x_panel {
   position: relative;
   width: 100%;

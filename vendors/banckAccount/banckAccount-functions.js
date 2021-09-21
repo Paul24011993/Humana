@@ -89,11 +89,23 @@ $('document').ready(function (e) {
         if($(this).val() == 1){
             $(this).siblings().find('input').val('AHORROS');
         }else if($(this).val() == 2){
-            $(this).siblings().find('input').val('TARJETA');
-        }else if($(this).val() == 3){
             $(this).siblings().find('input').val('CORRIENTE');
-        }else if($(this).val() == 4){
+        }else if($(this).val() == 3){
             $(this).siblings().find('input').val('VIRTUAL DE PAGO');
+        }else if($(this).val() == 4){
+            $(this).siblings().find('input').val('TARJETA');
+        }
+	});
+
+	$("input[name=tarjeta_up]").blur(function(){
+        if($(this).val() == 2){
+            $(this).siblings().find('input').val('DINNERS');
+        }
+	});
+
+	$("input[name=nombre_banco_up]").blur(function(){
+        if($(this).val() == 44){
+            $(this).siblings().find('input').val('DINNERS');
         }
 	});
 

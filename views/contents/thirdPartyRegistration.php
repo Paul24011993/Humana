@@ -262,7 +262,7 @@
 										<div class="col-12 col-md-6 col-sm-6 ">
 											<label class="control-label col-md-3 col-sm-3 ">Preexistencia</label>
                                             <div class="col-md-9 col-sm-9 ">
-                                                <select class="form-control " name="preexistencias" id="preexistencias_select">
+                                                <select class="form-control w-100" name="preexistencias" id="preexistencias_select">
 												</select>
 											</div>
 										</div>
