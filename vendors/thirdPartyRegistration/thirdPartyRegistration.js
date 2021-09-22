@@ -230,7 +230,7 @@ $('document').ready(function (e) {
                 contentType: false,
                 processData: false,
 				success: function (data) {
-					//console.log(data);
+					console.log(data);
 					var data_server = $.parseJSON(data);
 					respuesta.html(data_server); 
 					
