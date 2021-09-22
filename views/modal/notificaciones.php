@@ -1,7 +1,7 @@
 <div class="modal fade bs-example-modal-lg" id="mod_notify" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
-				<form>
+			<form method="POST" data-form="save" class="Form_send_notify form-horizontal" autocomplete="off" enctype="multipart/form-data">
 					<div class="modal-header">
 						<h4 class="modal-title" id="myModalLabel">Registro mails notificaciones</h4>
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
@@ -147,8 +147,9 @@
 									</div>
 									
 								</div>
+
 								<div class="tab-pane fade" id="por_tercero" role="tabpanel" aria-labelledby="por_tercero-tab">
-								<div class="form-group row">
+									<div class="form-group row">
 										<div class="col-12 col-md-6 col-sm-6 px-0">
 											<label class="control-label col-md-4 col-sm-4 ">Proceso</label>
 											<div class="col-md-8 col-sm-8 ">
@@ -161,9 +162,9 @@
 										<div class="col-12 col-md-6 col-sm-6 px-0">
 											<label class="control-label col-md-4 col-sm-4 ">Instancia</label>
 											<div class="col-md-8 col-sm-8 ">
-												<select class="form-control" >
+												<select class="form-control" name="instancia_tercero">
 													<option value="">SELECCIONE</option>
-													<option value="2" selected>NOTIFICACIONES FACTURACION ELECTRONICA</option>
+													<option value="NOTIFICACIONES FACTURACION ELECTRONICA" selected>NOTIFICACIONES FACTURACION ELECTRONICA</option>
 												</select>
 											</div>
 										</div>
@@ -247,13 +248,13 @@
 										<div class="col-12 col-md-6 col-sm-6 px-0">
 											<label class="control-label col-md-4 col-sm-4 ">Celular</label>
 											<div class="col-md-8 col-sm-8 ">
-											<input type="text" class="form-control" placeholder="">
+											<input type="text" class="form-control" placeholder="" name="celular_por_terceros">
 											</div>
 										</div>
 										<div class="col-12 col-md-6 col-sm-6 px-0">
 											<label class="control-label col-md-4 col-sm-4 ">Mail</label>
 											<div class="col-md-8 col-sm-8 ">
-											<input type="text" class="form-control" placeholder="">
+											<input type="text" class="form-control" placeholder="" name="mail_por_terceros">
 											</div>
 										</div>
 									</div>
@@ -271,7 +272,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" >Nuevo</button>
-						<button type="button" class="btn btn-secondary" id="close_modal_save" >Guardar</button>
+						<button type="submit" class="btn btn-secondary">Guardar</button>
 						<button type="button" class="btn btn-primary"  data-dismiss="modal">Salir</button>
 					</div>
 				</form>
@@ -296,5 +297,72 @@
 				}
 			});
 		});
+
+		$('.Form_send_notify').submit(function(e){
+			e.preventDefault();
+			var form = $(this);
+			var tipo=form.attr('data-form');
+			var metodo=form.attr('method');
+			var formdata = new FormData(this);
+			
+			swal({
+				title: "¿Estás seguro?",   
+				text: "Los datos que enviaras quedaran almacenados en el sistema",   
+				type: "question",   
+				showCancelButton: true,     
+				confirmButtonText: "Aceptar",
+				cancelButtonText: "Cancelar"
+				}).then(function () {
+				$.ajax({
+					type: metodo,
+					url: SERVER_API + "Preexistences/addPersonNotify/",
+					data: formdata ? formdata : form.serialize(),
+					cache: false,
+					contentType: false,
+					processData: false,
+					success: function (data) {
+						var data_server = $.parseJSON(data);
+						console.log(data);
+						
+						
+						//console.log(data_server);
+						if(data_server.type == 'error'){
+							swal(
+								"Ocurrio un error",
+								data_server.data.message,
+								data_server.type
+							);
+						}else{
+							if(tipo == 'save'){
+								swal(
+									"Registro ingresado",
+									data_server.data.message,
+									data_server.type
+								);
+							
+							}
+							if (tipo == 'update') {
+								swal(
+									"Registro actualizado",
+									data_server.data.message,
+									data_server.type
+								);
+							}
+							
+						}
+						
+						$('.respuesta-validacion-correo').removeClass('has-success');
+						$('.respuesta-validacion-cedula').removeClass('has-success');
+						$(".respuesta-val-input-cedula").html("");
+						$(".respuesta-val-input-correo").html("");
+					},
+					error: function() {
+						$('.RespuestaAjax').html(msjError);
+					}
+				});
+				return false;
+			});
+		});
+	 
 		
 	</script>

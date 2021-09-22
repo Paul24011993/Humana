@@ -10,9 +10,6 @@
                     <div class="clearfix"></div>
 				</div>
                 <div class="x_content mt-4">
-					
-                    
-						
                         <div class="form-group row">
                             <div class="col-12 col-md-12 col-sm-12 ">
                                 <label class="control-label col-md-2 col-sm-2 px-0">Identificación</label>
@@ -69,8 +66,7 @@
 								</div>
 							</div>
 						</div>
-                        <form  method="POST" data-form="update" class="FormularioAjax form-horizontal" autocomplete="off" enctype="multipart/form-data">
-						<input type="hidden" class="form-control" placeholder="" name="id_cuen_per" value="">   
+                        
                         
                         <div class="x_title mt-5">
                             <h2>Cuentas actuales</h2>
@@ -134,7 +130,8 @@
 						</div>
 
                         
-                             
+                    <form  method="POST" data-form="save" class="FormularioAjax form-horizontal" autocomplete="off" enctype="multipart/form-data">
+						<input type="hidden" class="form-control" placeholder="" name="id_cuen_per" value="">   
                         <div class="x_title mt-5">
                                 <h2>Cuentas nuevas</h2>
                                 <div class="clearfix"></div>
@@ -147,9 +144,9 @@
                                                 <div class="col-md-8 col-sm-8 ">
 
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="tip_cuenta_up" placeholder="" style="width:10%;">
+                                                        <input type="text" class="form-control" name="tip_cuenta" placeholder="" style="width:10%;">
                                                         <span class="input-group-btn" style="width:87%; margin-left:3%;">
-                                                            <input type="text" class="form-control" name="tip_cuenta_up_name" placeholder="">
+                                                            <input type="text" class="form-control" name="tip_cuenta_name" placeholder="">
                                                         </span>
                                                     </div>
                                                 </div>
@@ -172,7 +169,7 @@
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="tarjeta_up" placeholder="" style="width:10%;">
                                                     <span class="input-group-btn" style="width:87%; margin-left:3%;">
-                                                        <input type="text" class="form-control" name="tarjeta_up" placeholder="">
+                                                        <input type="text" class="form-control" name="tarjeta_up_name" placeholder="">
                                                     </span>
                                                 </div>
                                             </div>

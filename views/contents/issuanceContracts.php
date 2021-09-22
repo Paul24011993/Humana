@@ -266,10 +266,23 @@
 											</div>
 										</div>
 
-
+                                        <div class="form-group row">
+                                            <div class="col-12 col-md-6 col-sm-6 ">
+                                                <label class="control-label col-md-4 col-sm-4 ">Identificación</label>
+                                                <div class="col-md-8 col-sm-8 ">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="dni_notify_table" placeholder="">
+                                                    <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-primary" id="button_serach_person_notify_table"><i class="fa fa-search"></i> Buscar</button>
+                                                    </span>
+                                                </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <div class="tab-pane fade pt-3 " id="notificaciones" role="tabpanel" aria-labelledby="notificaciones-tab">
-                                            <table class="table table-striped">
+                                            <table class="table table-striped" id="table_notificaciones">
                                                 <thead>
                                                     <tr>
                                                         <th>Proceso</th>
@@ -279,24 +292,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th scope="row">NOTIFICACIONES RENOVACIONES AUTOMATICAS</th>
-                                                        <td>stevn_armijossa@hotmail.com</td>
-                                                        <td></td>
-                                                        <td>0992748585</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row"> </th>
-                                                        <td> </td>
-                                                        <td> </td>
-                                                        <td> </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row"> </th>
-                                                        <td> </td>
-                                                        <td> </td>
-                                                        <td> </td>
-                                                    </tr>
+                                                   
                                                 </tbody>
                                             </table>
 										</div>

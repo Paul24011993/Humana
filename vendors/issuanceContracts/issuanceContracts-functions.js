@@ -65,8 +65,24 @@ $('document').ready(function (e) {
 	});
 		
 		
+	var tbHtml = '';
+	$("#button_serach_person_notify_table").click(function(){
+		var input_dni = $(this).parent().siblings('input[name=dni_notify_table]').val();
+		$.post(SERVER_API + "Persons/get_all_persons_dni/", { input_dni: input_dni }, function (data) {
+			var get_data_to_table = $.parseJSON(data).data;
+			$.each(get_data_to_table, function (key, registro) {
+				tbHtml += ` <tr class="get_data_row" style="cursor:pointer;">
+								<th >${registro.PER_INSTANCIA}</th>							
+								<th >${registro.PER_EMAIL}</th>
+								<th ></th>
+								<th >${registro.PER_CELULAR}</th>
+				
+							</tr>`;
+				$('#table_notificaciones tbody').prepend(tbHtml);
 
-
+			});
+		});
+	});
 
 	/*
 		$("#select_city option:selected").each(function () {

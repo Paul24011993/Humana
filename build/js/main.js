@@ -25,27 +25,6 @@ $('document').ready(function (e) {
         $(this).removeClass('active');
     });
 
-    $('body').on("click","#close_modal_save",function(){
-    
-
-        swal({
-            title: "",
-            text: "Registro realizado con exito",
-            type: "success",
-            showCancelButton: false,
-            confirmButtonClass: "btn-default",
-            confirmButtonText: "Aceptar",
-            closeOnConfirm: false
-          },
-          function(isConfirm){
-            if (isConfirm) {
-                $('#mod_notify').modal('hide');
-            swal("Deleted!", "Your imaginary file has been deleted.", "success");
-            
-            }
-        });
-            
-    });
 });
 
 var rand = function() {
