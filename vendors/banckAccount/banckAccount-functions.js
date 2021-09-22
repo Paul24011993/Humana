@@ -91,9 +91,9 @@ $('document').ready(function (e) {
         }else if($(this).val() == 2){
             $(this).siblings().find('input').val('CORRIENTE');
         }else if($(this).val() == 3){
-            $(this).siblings().find('input').val('VIRTUAL DE PAGO');
-        }else if($(this).val() == 4){
             $(this).siblings().find('input').val('TARJETA DE CRÉDITO');
+        }else if($(this).val() == 4){
+            $(this).siblings().find('input').val('VIRTUAL DE PAGO');
         }
 	});
 
