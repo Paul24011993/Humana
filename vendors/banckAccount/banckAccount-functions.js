@@ -99,13 +99,13 @@ $('document').ready(function (e) {
 
 	$("input[name=tarjeta_up]").blur(function(){
         if($(this).val() == 2){
-            $(this).siblings().find('input').val('DINNERS');
+            $(this).siblings().find('input').val('DINERS');
         }
 	});
 
 	$("input[name=nombre_banco_up]").blur(function(){
         if($(this).val() == 44){
-            $(this).siblings().find('input').val('DINNERS');
+            $(this).siblings().find('input').val('DINERS');
         }
 	});
 
